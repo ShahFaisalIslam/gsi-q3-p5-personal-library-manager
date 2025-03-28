@@ -4,15 +4,47 @@ GIAIC Quarter 3 Project 5 - Personal Library Manager
 
 ## Overview
 
-The personal library manager is a command-line utility used to manage the user's book collection. The program lets the user add, remove, and search for books.
+The personal library manager is a command-line utility used to manage the user's book collection, referred to as the library. The program lets the user add, remove, and search for books.
 
-Each book is stored as a dictionary with te following details:
+The program includes a menu system helping user perform their tasks, and statistics such as total books and percentage of read books.
+
+In future, the program will save the library upon exit, and load the library upon program start.
+
+## Book Details
+
+Each book is stored as a dictionary with the following details:
 * Title: Book's name
 * Author: Book's writer
 * Publication Year: Year the book was published
 * Genre: Book's category
 * Status: Read or not read
 
-The program includes a menu system helping user perform their tasks, and statistics such as total books and percentage of read books.
+## Menu Actions
 
-In future, the program will save library via file handling.
+### Add a Book
+
+Prompt the user to enter details of a book to add the book to the library.
+
+### Remove a Book
+
+Prompt the user to enter a book's title to remove the book from the library.
+
+### Search for a Book
+
+Allow the user to search for a book by its title or its author. Display all matching books.
+
+### Display all Books
+
+Display all books in the library
+
+### Display statistics
+
+Display the following statistics of the library:
+* Total books
+* Percentage of books that have been read
+
+### Exit
+
+Exit the program.
+
+In future, the program will store the library in file.
