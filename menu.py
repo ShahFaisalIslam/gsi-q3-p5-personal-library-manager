@@ -15,15 +15,23 @@ menu_items : tuple = "Add a book", "Remove a book", "Search for a book", "Displa
 # Displays all actions, and prompts user to provide item number
 def display_menu() -> int:
     index = 1
+    # Display the actions
     for item in menu_items:
         print(f"{index}. {item}")
         index += 1
 
     # Take choice from user as number
-    input_index : int = int(input("Enter your choice (number):"))
+    while True:
+        try:
+            input_index : int = int(input("Enter your choice (number):"))
+            if input_index not in Menu:
+                raise ValueError()
+        except:
+            print("Invalid input, enter a choice from 1 to 6")
+            continue
+        break
     return input_index
 
 # Perform action based on given choice
 def perform_choice(choice : int):
-    if choice not in Menu:
-        print(f"{choice} is not valid")
+    pass
