@@ -1,6 +1,14 @@
-def main():
-    print("Hello from gsi-q3-p5-personal-library-manager!")
+# Personal Library Manager
+# Version 0.1
+# Author: Shah Faisal (faisal.islam.ceme@gmail.com)
 
+import library_io
 
-if __name__ == "__main__":
-    main()
+library: list = library_io.load_library()
+
+print(library)
+
+library.append("zeytoon")
+library.append("eid mubarak")
+
+library_io.save_library(library)
