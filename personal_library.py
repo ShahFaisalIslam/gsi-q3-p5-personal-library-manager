@@ -73,6 +73,19 @@ class PersonalLibrary:
             print(f"Removed book '{removed_book["title"]}' by '{removed_book["author"]}")
         else:
             print(f"No book found with title '{title}'")
+    
+    # Display all books
+    def display_books(self):
+        index = 1
+        for book in self.books:
+            status = "Read" if book["status"] else "Not Read"
+            print(f"{index}. {book["title"]} - {book["author"]} ({book["pub_year"]}) / {book["genre"]} - {status}")
+            index += 1
+
+    # Display aggregate statistics
+    def display_aggr_stats(self):
+        print(f"Total books: {len(self.books)}")
+
     # Called upon destruction of the object. Our code keeps the object 
     # throughout runtime, so it automatically runs at the end of the program
     def __del__(self):

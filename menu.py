@@ -43,9 +43,9 @@ def perform_choice(choice : int, library: PersonalLibrary) -> None:
         case Menu.SEARCH.value:
             pass
         case Menu.DISPLAY_BOOKS.value:
-            pass
+            library.display_books()
         case Menu.DISPLAY_STATS.value:
-            pass
+            library.display_aggr_stats()
         case Menu.EXIT.value:
             pass
         case _:
