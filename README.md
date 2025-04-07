@@ -37,7 +37,7 @@ Allow the user to search for a book by its title or its author. Display all matc
 
 Display all books in the library
 
-### Display statistics (In Progress)
+### Display statistics
 
 Display the following statistics of the library:
 * Total books

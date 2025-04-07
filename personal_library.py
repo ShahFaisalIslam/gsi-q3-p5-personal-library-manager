@@ -85,6 +85,11 @@ class PersonalLibrary:
     # Display aggregate statistics
     def display_aggr_stats(self):
         print(f"Total books: {len(self.books)}")
+        n_books_read : int = 0
+        for book in self.books:
+            if book["status"]:
+                n_books_read += 1
+        print(f"Read: {round(n_books_read * 100/len(self.books))} %")
 
     # Called upon destruction of the object. Our code keeps the object 
     # throughout runtime, so it automatically runs at the end of the program
