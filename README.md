@@ -29,7 +29,7 @@ Prompt the user to enter details of a book to add the book to the library.
 
 Prompt the user to enter a book's title to remove the book from the library.
 
-### Search for a Book
+### Search for a Book (In Progress)
 
 Allow the user to search for a book by its title or its author. Display all matching books.
 
@@ -37,7 +37,7 @@ Allow the user to search for a book by its title or its author. Display all matc
 
 Display all books in the library
 
-### Display statistics
+### Display statistics (In Progress)
 
 Display the following statistics of the library:
 * Total books
