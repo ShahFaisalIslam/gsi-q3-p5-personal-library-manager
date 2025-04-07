@@ -1,7 +1,7 @@
 # Menu module
 
 from enum import Enum
-
+from personal_library import PersonalLibrary
 class Menu(Enum):
     ADD = 1
     REMOVE = 2
@@ -34,18 +34,19 @@ def display_menu() -> int:
     return input_index
 
 # Perform action based on given choice
-def perform_choice(choice : int):
-    if choice == Menu.ADD.value:
-        pass
-    elif choice == Menu.REMOVE.value:
-        pass
-    elif choice == Menu.SEARCH.value:
-        pass
-    elif choice == Menu.DISPLAY_BOOKS.value:
-        pass
-    elif choice == Menu.DISPLAY_STATS.value:
-        pass
-    elif choice == Menu.EXIT.value:
-        pass
-    else:
-        print(f"Choice {choice} not present in menu")
+def perform_choice(choice : int, library: PersonalLibrary) -> None:
+    match choice:
+        case Menu.ADD.value:
+            pass
+        case Menu.REMOVE.value:
+            pass
+        case Menu.SEARCH.value:
+            pass
+        case Menu.DISPLAY_BOOKS.value:
+            pass
+        case Menu.DISPLAY_STATS.value:
+            pass
+        case Menu.EXIT.value:
+            pass
+        case _:
+            print(f"Choice {choice} not present in menu")
