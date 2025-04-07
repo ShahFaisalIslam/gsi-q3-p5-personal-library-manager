@@ -15,6 +15,7 @@ menu_items : tuple = "Add a book", "Remove a book", "Search for a book", "Displa
 # Displays all actions, and prompts user to provide item number
 def display_menu() -> int:
     index = 1
+    input_index = 0
     # Display the actions
     for item in menu_items:
         print(f"{index}. {item}")
@@ -34,4 +35,17 @@ def display_menu() -> int:
 
 # Perform action based on given choice
 def perform_choice(choice : int):
-    pass
+    if choice == Menu.ADD.value:
+        pass
+    elif choice == Menu.REMOVE.value:
+        pass
+    elif choice == Menu.SEARCH.value:
+        pass
+    elif choice == Menu.DISPLAY_BOOKS.value:
+        pass
+    elif choice == Menu.DISPLAY_STATS.value:
+        pass
+    elif choice == Menu.EXIT.value:
+        pass
+    else:
+        print(f"Choice {choice} not present in menu")
