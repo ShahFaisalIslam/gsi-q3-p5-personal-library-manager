@@ -37,7 +37,7 @@ def display_menu() -> int:
 def perform_choice(choice : int, library: PersonalLibrary) -> None:
     match choice:
         case Menu.ADD.value:
-            pass
+            library.add_book()
         case Menu.REMOVE.value:
             pass
         case Menu.SEARCH.value:
