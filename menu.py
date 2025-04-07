@@ -39,7 +39,7 @@ def perform_choice(choice : int, library: PersonalLibrary) -> None:
         case Menu.ADD.value:
             library.add_book()
         case Menu.REMOVE.value:
-            pass
+            library.remove_book()
         case Menu.SEARCH.value:
             pass
         case Menu.DISPLAY_BOOKS.value:

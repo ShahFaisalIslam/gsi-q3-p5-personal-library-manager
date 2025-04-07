@@ -61,8 +61,18 @@ class PersonalLibrary:
 
     # Remove a book
     def remove_book(self):
-        pass
-
+        title : str = input("Title:")
+        index = 0
+        removed_book = None
+        for book in self.books:
+            if book["title"] == title:
+                removed_book = self.books.pop(index)
+            index += 1
+        
+        if removed_book:
+            print(f"Removed book '{removed_book["title"]}' by '{removed_book["author"]}")
+        else:
+            print(f"No book found with title '{title}'")
     # Called upon destruction of the object. Our code keeps the object 
     # throughout runtime, so it automatically runs at the end of the program
     def __del__(self):
