@@ -29,9 +29,10 @@ Prompt the user to enter details of a book to add the book to the library.
 
 Prompt the user to enter a book's title to remove the book from the library.
 
-### Search for a Book (In Progress)
+### Search for a Book
 
-Allow the user to search for a book by its title or its author. Display all matching books.
+Allow the user to search for a book by its title or its author. Display all
+exactly matching books (i.e. title or author is an exact match).
 
 ### Display all Books
 
