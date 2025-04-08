@@ -1,13 +1,7 @@
 # Personal Library module
-# It will contain a class PersonalLibrary as follows:
-# Private member: List of books
-# Methods:
-#   * Add a book
-#   * Remove a book
-#   * Search for a book
-#   * Display all books
-#   * Display aggregated statistics
+
 from library_io import load_library,save_library
+from enum import Enum
 
 # Book class, to ensure that any book added has at least the required variables
 # title : Book title
@@ -23,6 +17,18 @@ class Book(dict):
         self.genre = genre
         self.status = status
 
+# Enum for search mode
+class SearchMode(Enum):
+    TITLE = 1
+    AUTHOR = 2
+
+# Member: List of books
+# Methods:
+#   * Add a book
+#   * Remove a book
+#   * Search for a book
+#   * Display all books
+#   * Display aggregated statistics
 class PersonalLibrary:
     def __init__(self):
         self.books = load_library()
@@ -74,12 +80,51 @@ class PersonalLibrary:
         else:
             print(f"No book found with title '{title}'")
     
+    # Helper to display a book
+    def _display_book(self,index : int,book : dict) -> None:
+        print(f"{index}. {book["title"]} by {book["author"]} ({book["pub_year"]}) - {book["genre"]} - {'Read' if book["status"] else 'Not Read'}")
+
+    # Search for a book by title or author
+    def search_book(self):
+        choice : int = None
+        found_books : list[Book] = []
+
+        # Obtain search choice
+        while True:
+            try:
+                choice = int(input("Type 1 for title, or 2 for author:"))
+                if choice != SearchMode.AUTHOR.value and choice != SearchMode.TITLE.value:
+                    raise ValueError()
+                break
+            except:
+                print("Invalid choice, type 1 or 2")
+        
+        match choice:
+            case SearchMode.AUTHOR.value:
+                author = input("Author:")
+                for book in self.books:
+                    if author == book["author"]:
+                        found_books.append(book)
+            case SearchMode.TITLE.value:
+                title = input("Title:")
+                for book in self.books:
+                    if title == book["title"]:
+                        found_books.append(book)
+
+        if not len(found_books):
+            print("No books found")
+        else:
+            index = 1
+            print("Found books:")
+            for book in found_books:
+                self._display_book(index,book)
+                index += 1
+
     # Display all books
     def display_books(self):
         index = 1
         for book in self.books:
-            status = "Read" if book["status"] else "Not Read"
-            print(f"{index}. {book["title"]} - {book["author"]} ({book["pub_year"]}) / {book["genre"]} - {status}")
+            self._display_book(index,book)
             index += 1
 
     # Display aggregate statistics
